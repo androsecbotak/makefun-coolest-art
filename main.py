@@ -353,12 +353,13 @@ def draw():
     c.ellipse(318, 912, 18, 18, STEEL_D)
 
     # Magenta energy slash arcing across the chest and the blade.
-    c.arc(700, 860, 330, math.radians(200), math.radians(290), 10, MAGENTA)
-    c.arc(700, 860, 330, math.radians(200), math.radians(290), 4, (255, 150, 200))
+    # It ends on the blade instead of floating in the sky.
+    c.arc(700, 860, 330, math.radians(200), math.radians(272), 10, MAGENTA)
+    c.arc(700, 860, 330, math.radians(200), math.radians(272), 4, (255, 150, 200))
 
     # Cherry blossom petals drifting in, deterministic spots.
-    p = lcg(777, 60)
-    for i in range(15):
+    p = lcg(777, 72)
+    for i in range(18):
         x = 40 + p[i * 2] * 944
         y = 60 + p[i * 2 + 1] * 860
         s = 7 + p[(i + 15) % 60] * 8
